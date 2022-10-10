@@ -8,14 +8,20 @@ export default function Header() {
     return (
         <Container>
             <img src={logo} />
-            <h1>Hi</h1>
         </Container>
     );
 }
 
 const Container = styled.div`
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
     width: 100vw;
-    background-color: black;
-    color: white;
+    background-color: #232323;
+    color: #EFEFEF;
+
+    img {
+        height: 50px;
+    }
 `;
