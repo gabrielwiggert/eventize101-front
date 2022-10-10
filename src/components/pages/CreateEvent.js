@@ -24,7 +24,7 @@ export default function CreateEvent () {
 
         setLoading(true);
 
-            const requisicao = axios.post("http://localhost:4001/create", {
+            const requisicao = axios.post("https://eventize101.herokuapp.com/create", {
                 title,
                 host,
                 dateTime,

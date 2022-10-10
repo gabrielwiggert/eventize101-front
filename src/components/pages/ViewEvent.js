@@ -17,7 +17,7 @@ export default function ViewEvent () {
     
     const currentPath = window.location.pathname;
     useEffect(() => {
-        const eventData = axios.get(`http://localhost:4001${currentPath}`);
+        const eventData = axios.get(`https://eventize101.herokuapp.com${currentPath}`);
 
         eventData.then((response) => {
             console.log(response.data);
