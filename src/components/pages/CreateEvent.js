@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import React from 'react'
 import { render } from 'react-dom'
 import { ThreeDots } from 'react-loader-spinner'
+import UserContext from "../UserContext";
 
 export default function CreateEvent () {
     const [title, setTitle] = useState("");
@@ -14,6 +16,7 @@ export default function CreateEvent () {
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [loading, setLoading] = useState(false);
+    const { userData, setUserData } = useContext(UserContext);
     const navigate = useNavigate();
 
 	function createEvent (event) {
@@ -30,8 +33,9 @@ export default function CreateEvent () {
             });
 
         requisicao.then((response) => {
+            setUserData(response.data)
             console.log(response.data);
-            navigate(`/event/${response.data}`);
+            navigate(`/events/${response.data}`);
         });
 
         requisicao.catch((err) => {

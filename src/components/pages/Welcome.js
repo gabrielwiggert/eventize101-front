@@ -9,22 +9,13 @@ export default function Welcome() {
             <h1>Events made simple</h1>
             <h2>Create a page for your event and share it with your invitees</h2>
             <h3>login-less (optional), no-app web experience</h3>
-            <Button>
-                <Link to="/create">
-                    <button role="button">Get started</button>
-                </Link>
-            </Button>
+            <Link to="/create">
+                <button role="button">Get started</button>
+            </Link>
         </Container>
         </>
     );
 }
-
-const Button = styled.div`
-    button {
-        height: '50px';
-        width: '50px';
-    }
-`;
 
 const Container = styled.div`
     margin-top: 50px;
